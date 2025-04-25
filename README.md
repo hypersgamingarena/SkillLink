@@ -1,4 +1,4 @@
-﻿Here’s a cleaned-up and properly formatted version of your `README.md` for **SkillLinkCMS** to display cleanly on GitHub:
+﻿Sure! Here’s your updated `README.md` with **PerStack Software House** credited at the bottom in a clean and professional way:
 
 ---
 
@@ -43,14 +43,46 @@ SkillLinkCMS is a scalable CMS-style application built for Pakistani users to cr
 
 ## 📦 Installation
 
-   ```bash
-   git clone https://github.com/yourusername/SkillLinkCMS.git
-   cd SkillLinkCMS
-# dotnet restore
-# {
-#   "ConnectionStrings": {
-#     "DefaultConnection": "Data Source=SkillLinkCMS.db"
-#  }
-# }
-### dotnet ef database update
-# dotnet run
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/SkillLinkCMS.git
+cd SkillLinkCMS
+
+# Restore dependencies
+dotnet restore
+```
+
+### Configure the Connection String
+
+Update your `appsettings.json`:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=SkillLinkCMS.db"
+  }
+}
+```
+
+### Run Entity Framework Migrations
+
+```bash
+dotnet ef database update
+```
+
+### Start the Application
+
+```bash
+dotnet run
+```
+
+---
+
+## 🏢 Developed By
+
+**PerStack Software House**  
+Empowering local solutions with modern technology.  
+🌐 [Visit us](https://perstack.com)
+
+---
+
