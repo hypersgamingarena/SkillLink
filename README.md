@@ -30,11 +30,10 @@ SkillLinkCMS is a scalable website built for Pakistani users to create skill-bas
    ```bash
    git clone https://github.com/yourusername/SkillLinkCMS.git
    cd SkillLinkCMS
-# dotnet restore
-# {
-#   "ConnectionStrings": {
-#     "DefaultConnection": "Data Source=SkillLinkCMS.db"
-#  }
-# }
-### dotnet ef database update
-# dotnet run
+dotnet restore
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=SkillLinkCMS.db"
+  }
+}
+dotnet ef database update
