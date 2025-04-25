@@ -1,8 +1,4 @@
-﻿Sure! Here’s your updated `README.md` with **PerStack Software House** credited at the bottom in a clean and professional way:
-
----
-
-# SkillLinkCMS
+﻿# SkillLinkCMS
 
 SkillLinkCMS is a scalable CMS-style application built for Pakistani users to create skill-based profiles. Clients can search for skilled professionals based on their **city** and **category**.
 
