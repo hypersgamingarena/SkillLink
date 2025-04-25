@@ -43,39 +43,14 @@ SkillLinkCMS is a scalable CMS-style application built for Pakistani users to cr
 
 ## 📦 Installation
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/SkillLinkCMS.git
-cd SkillLinkCMS
-
-# Restore dependencies
-dotnet restore
-```
-
-### Configure the Connection String
-
-Update your `appsettings.json`:
-
-```json
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Data Source=SkillLinkCMS.db"
-  }
-}
-```
-
-### Run Entity Framework Migrations
-
-```bash
-dotnet ef database update
-```
-
-### Start the Application
-
-```bash
-dotnet run
-```
-
----
-
-Let me know if you want badges, a license section, or screenshots added too?
+   ```bash
+   git clone https://github.com/yourusername/SkillLinkCMS.git
+   cd SkillLinkCMS
+# dotnet restore
+# {
+#   "ConnectionStrings": {
+#     "DefaultConnection": "Data Source=SkillLinkCMS.db"
+#  }
+# }
+### dotnet ef database update
+# dotnet run
