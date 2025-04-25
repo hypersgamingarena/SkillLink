@@ -1,0 +1,23 @@
+﻿@page
+@model SkillLinkCMS.Pages.Admin.SettingsModel
+@{
+    ViewData["Title"] = "Site Settings";
+}
+
+<h2>Site Settings</h2>
+
+<form method="post">
+    <div>
+        <label>Site Title</label>
+        <input asp-for="SiteTitle" class="form-control" />
+    </div>
+    <div>
+        <label>Logo URL</label>
+        <input asp-for="LogoUrl" class="form-control" />
+    </div>
+    <div>
+        <label>Footer Text</label>
+        <input asp-for="FooterText" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Save</button>
+</form>

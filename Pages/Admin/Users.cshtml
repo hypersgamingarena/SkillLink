@@ -1,0 +1,10 @@
+﻿@page
+@model SkillLinkCMS.Pages.Admin.UsersModel
+@{
+}
+@foreach (var p in Model.Users)
+{
+    <form method="post" asp-page-handler="Feature" asp-route-id="@p.Id">
+        <button type="submit">@((p.IsFeatured) ? "Unfeature" : "Feature")</button>
+    </form>
+}

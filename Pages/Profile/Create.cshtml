@@ -1,0 +1,26 @@
+﻿@page
+@model SkillLinkCMS.Pages.Profile.CreateModel
+@{
+    ViewData["Title"] = "Create Profile";
+}
+<h2>Create Your Skill Profile</h2>
+<form method="post">
+    <input asp-for="Profile.Name" placeholder="Full Name" />
+    <textarea asp-for="Profile.Bio" placeholder="Bio"></textarea>
+
+    <select asp-for="Profile.CategoryId">
+        @foreach (var cat in Model.Categories)
+        {
+            <option value="@cat.Id">@cat.Name</option>
+        }
+    </select>
+
+    <select asp-for="Profile.CityId">
+        @foreach (var city in Model.Cities)
+        {
+            <option value="@city.Id">@city.Name</option>
+        }
+    </select>
+
+    <button type="submit">Create Profile</button>
+</form>

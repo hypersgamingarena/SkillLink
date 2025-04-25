@@ -1,0 +1,17 @@
+﻿@page
+@model SkillLinkCMS.Pages.Admin.CitiesModel
+@{
+}
+
+<h2>Cities</h2>
+<form method="post">
+    <input asp-for="NewCity.Name" placeholder="City name" />
+    <button type="submit">Add City</button>
+</form>
+
+<ul>
+@foreach (var city in Model.Cities)
+{
+    <li>@city.Name</li>
+}
+</ul>

@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<form method="get">
+    <select asp-for="CityId">
+        <option value="0">All Cities</option>
+        @foreach (var city in Model.Cities) {
+            <option value="@city.Id">@city.Name</option>
+        }
+    </select>
+    <select asp-for="CategoryId">
+        <option value="0">All Skills</option>
+        @foreach (var cat in Model.Categories) {
+            <option value="@cat.Id">@cat.Name</option>
+        }
+    </select>
+    <button type="submit">Search</button>
+</form>
+
+<h3>Featured Profiles</h3>
+@foreach (var profile in Model.Profiles)
+{
+    <div>
+        <a href="/Profile/View/@profile.Id">@profile.Name</a> - @profile.Category.Name (@profile.City.Name)
+    </div>
+}
