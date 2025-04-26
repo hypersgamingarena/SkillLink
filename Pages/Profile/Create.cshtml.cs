@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 using SkillLinkCMS.Models;
 using SkillLinkCMS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace SkillLinkCMS.Pages.Profile
-{
+namespace SkillLinkCMS.Pages.Profile{
     public class CreateModel : PageModel
     {
         private readonly ApplicationDbContext _context;
@@ -21,8 +21,8 @@ namespace SkillLinkCMS.Pages.Profile
             _logger = logger;
         }
 
-        [BindProperty]
-        public UserProfile Profile { get; set; }
+        [BindProperty] 
+        public Profile Profile { get; set; }
 
         public List<Category> Categories { get; set; }
         public List<City> Cities { get; set; }
@@ -31,7 +31,7 @@ namespace SkillLinkCMS.Pages.Profile
         public void OnGet()
         {
             LoadCategoriesAndCities();
-        }
+        } 
 
         // OnPostAsync method to handle the form submission
         public async Task<IActionResult> OnPostAsync()
@@ -61,16 +61,15 @@ namespace SkillLinkCMS.Pages.Profile
                     // Handle the case where the user already has a profile
                     ModelState.AddModelError(string.Empty, "You already have a profile.");
                     LoadCategoriesAndCities();
-                    return Page();
-                }
+                    return Page(); 
+                } 
 
                 // Set the UserId for the profile and add it to the context
-                Profile.UserId = userId;
-                _context.Profiles.Add(Profile);
+                Profile.UserId = userId; 
+                _context.Profiles.Add(Profile); 
 
                 // Save the profile to the database
-                await _context.SaveChangesAsync();
-
+                await _context.SaveChangesAsync(); 
                 // Redirect to the View page of the created profile
                 return RedirectToPage("/Profile/View", new { id = Profile.Id });
             }
@@ -99,4 +98,5 @@ namespace SkillLinkCMS.Pages.Profile
             Cities = _context.Cities.ToList();
         }
     }
+
 }

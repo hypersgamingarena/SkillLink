@@ -1,5 +1,32 @@
-﻿@page
+@page
 @model SkillLinkCMS.Pages.Profile.EditModel
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+
 @{
+    ViewData["Title"] = "Edit Profile";
 }
 
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Profile.Bio">Bio</label>
+        <textarea asp-for="Profile.Bio" class="form-control"></textarea>
+        <span asp-validation-for="Profile.Bio" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Profile.Skills">Skills</label>
+        <input asp-for="Profile.Skills" class="form-control" />
+        <span asp-validation-for="Profile.Skills" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Profile.CityId">City</label>
+        <select asp-for="Profile.CityId" class="form-control" asp-items="@Model.Cities"></select>
+        <span asp-validation-for="Profile.CityId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

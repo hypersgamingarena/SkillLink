@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using SkillLinkCMS.Data;
-using SkillLinkCMS.Models;
-using SkillLinkCMS.Services;
+using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
 
-public class ApplicationUser : IdentityUser
+
+namespace SkillLinkCMS.Models
 {
-    public bool IsFeatured { get; set; }
-    // Add additional properties for your user if needed
+    public class ApplicationUser : IdentityUser
+    {   
+    }
 }

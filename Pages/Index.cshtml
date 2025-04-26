@@ -1,29 +1,42 @@
-﻿@page
-@model IndexModel
+@page
+@model SkillLinkCMS.Pages.IndexModel
+@using SkillLinkCMS.Models
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "SkillLink PK";
 }
 
-<form method="get">
-    <select asp-for="CityId">
-        <option value="0">All Cities</option>
-        @foreach (var city in Model.Cities) {
-            <option value="@city.Id">@city.Name</option>
-        }
-    </select>
-    <select asp-for="CategoryId">
-        <option value="0">All Skills</option>
-        @foreach (var cat in Model.Categories) {
-            <option value="@cat.Id">@cat.Name</option>
-        }
-    </select>
-    <button type="submit">Search</button>
+<div class="text-center">
+    <h1 class="display-4">Welcome to SkillLink PK</h1>
+    <p>Find local talent and showcase your skills!</p>
+</div>
+
+<form method="get" class="mb-4">
+    <div class="row">
+        <div class="col-md-4">
+            <label for="City">City:</label>
+            <input type="text" name="City" id="City" class="form-control" placeholder="Enter city" />
+        </div>
+        <div class="col-md-4">
+            <label for="Skill">Skill:</label>
+            <input type="text" name="Skill" id="Skill" class="form-control" placeholder="Enter skill" />
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-primary mt-4">Search</button>
+        </div>
+    </div>
 </form>
 
-<h3>Featured Profiles</h3>
-@foreach (var profile in Model.Profiles)
-{
-    <div>
-        <a href="/Profile/View/@profile.Id">@profile.Name</a> - @profile.Category.Name (@profile.City.Name)
-    </div>
-}
+<h3 class="mt-5">Featured Profiles</h3>
+<div class="row">
+    @foreach (var profile in Model.FeaturedProfiles)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="/Profile/View/@profile.Id">@profile.User.UserName</a></h5>
+                    <p class="card-text">@profile.Skills</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
